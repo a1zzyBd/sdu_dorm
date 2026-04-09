@@ -1,60 +1,61 @@
 # 🏠 SDU Dorm
 
-## 🎯 Технологический стек
+## 🎯 Technology Stack
 
 ### Backend (Django)
-- **Django 4.2.25** — веб-фреймворк
-- **Django REST Framework** — создание REST API
-- **PostgreSQL** — реляционная база данных
-- **JWT (Simple JWT)** — аутентификация через токены
-- **Argon2** — безопасное хеширование паролей
-- **CORS Headers** — поддержка кросс-доменных запросов
+
+* **Django 4.2.25** — web framework
+* **Django REST Framework** — for building REST APIs
+* **PostgreSQL** — relational database
+* **JWT (Simple JWT)** — token-based authentication
+* **Argon2** — secure password hashing
+* **CORS Headers** — support for cross-origin requests
 
 ### Frontend (React)
-- **React 18** — библиотека для UI
-- **TypeScript** — типизированный JavaScript
-- **Vite** — инструмент сборки
-- **Tailwind CSS** — utility-first CSS фреймворк
-- **Lucide React** — коллекция иконок
+
+* **React 18** — UI library
+* **TypeScript** — typed JavaScript
+* **Vite** — build tool
+* **Tailwind CSS** — utility-first CSS framework
+* **Lucide React** — icon collection
 
 ---
 
+## 📁 Project Structure
 
-## 📁 Структура проекта
-
-```
+```bash
 sdudorm-project/
 │
 ├── sdudorm-backend/              # Django Backend
 │   ├── manage.py
-│   ├── requirements.txt          # Python зависимости
-│   ├── seed_data.sql             # Тестовые данные
-│   ├── .env                      # Переменные окружения (создать вручную)
+│   ├── requirements.txt          # Python dependencies
+│   ├── seed_data.sql             # Test data
+│   ├── .env                      # Environment variables (create manually)
 │   │
-│   ├── sdudorm_backend/          # Настройки Django
-│   │   ├── settings.py           # Конфигурация (JWT, CORS, БД)
-│   │   ├── urls.py               # Главные маршруты
+│   ├── sdudorm_backend/          # Django settings
+│   │   ├── settings.py           # Configuration (JWT, CORS, DB)
+│   │   ├── urls.py               # Main routes
 │   │   └── wsgi.py
 │   │
-│   ├── students/                 # Приложение: Студенты
-│   │   ├── models.py             # Модель Student
+│   ├── students/                 # App: Students
+│   │   ├── models.py             # Student model
 │   │   ├── views.py              # Login, Profile, Change Password
 │   │   ├── serializers.py
 │   │   └── urls.py
 │   │
-│   └── explanations/             # Приложение: Объяснительные и Комнаты
+│   └── explanations/             # App: Explanations and Rooms
 │       ├── models.py             # Explanation, Room, RoomAssignment
 │       ├── views.py              # CRUD + Approve/Reject + Export
 │       ├── serializers.py
 │       └── urls.py
 │
 ├── sdudorm-frontend/             # React Frontend
-│   ├── public/                   # Статические файлы
+│   ├── public/                   # Static files
 │   │   ├── sduLogo.png
 │   │   └── sduDor.png
 │   │
 │   ├── src/
-│   │   ├── components/           # React компоненты
+│   │   ├── components/           # React components
 │   │   │   ├── LoginPage.tsx
 │   │   │   ├── HomePage.tsx
 │   │   │   ├── MyProfilePage.tsx
@@ -65,32 +66,32 @@ sdudorm-project/
 │   │   │   └── ...
 │   │   │
 │   │   ├── api/
-│   │   │   └── backendAPI.ts     # API клиент для Django
+│   │   │   └── backendAPI.ts     # API client for Django
 │   │   │
-│   │   ├── App.tsx               # Главный компонент
-│   │   ├── main.tsx              # Точка входа
+│   │   ├── App.tsx               # Main component
+│   │   ├── main.tsx              # Entry point
 │   │   └── index.css
 │   │
-│   ├── package.json              # Node.js зависимости
-│   ├── tsconfig.json             # TypeScript конфиг
-│   ├── vite.config.ts            # Vite конфиг
-│   └── tailwind.config.js        # Tailwind CSS конфиг
+│   ├── package.json              # Node.js dependencies
+│   ├── tsconfig.json             # TypeScript config
+│   ├── vite.config.ts            # Vite config
+│   └── tailwind.config.js        # Tailwind CSS config
 │
-└── README.md                     # Этот файл
+└── README.md                     # This file
 ```
 
-## 🚀 Установка и запуск (Полное руководство)
+## 🚀 Installation and Launch (Complete Guide)
 
-### Предварительные требования
+### Prerequisites
 
-Убедитесь, что у вас установлены:
+Make sure you have installed:
 
-- **Python 3.12+** ([Скачать](https://www.python.org/downloads/))
-- **Node.js 18+** ([Скачать](https://nodejs.org/))
-- **PostgreSQL 15+** ([Скачать](https://www.postgresql.org/download/))
-- **Git** ([Скачать](https://git-scm.com/))
+* **Python 3.12+** ([Download](https://www.python.org/downloads/))
+* **Node.js 18+** ([Download](https://nodejs.org/))
+* **PostgreSQL 15+** ([Download](https://www.postgresql.org/download/))
+* **Git** ([Download](https://git-scm.com/))
 
-Проверка установки:
+Check installation:
 
 ```bash
 python --version    # Python 3.12.x
@@ -102,40 +103,43 @@ git --version       # git 2.x.x
 
 ---
 
-## 📦 Шаг 1: Клонирование репозитория
+## 📦 Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/Nurdaulet-no/sdu-dorm.git
 cd sdu-dorm
 ```
-### Обновление кода
 
-First check bransh
-```bash 
+### Update the code
+
+First check the branch:
+
+```bash
 git checkout nurda
 ```
 
-Then pull the latest changes
+Then pull the latest changes:
+
 ```bash
 git pull origin main
 ```
 
 ---
 
-## 🔧 Шаг 2: Настройка Backend (Django)
+## 🔧 Step 2: Backend Setup (Django)
 
-### 2.1 Перейти в папку backend
+### 2.1 Go to the backend folder
 
 ```bash
 cd sdudorm-backend
 ```
 
-### 2.2 Создать виртуальное окружение
+### 2.2 Create a virtual environment
 
 ```bash
 # Linux/Mac
 python -m venv .venv 
-# if python dont work use python3
+# if python does not work, use python3
 source .venv/bin/activate
 
 # Windows
@@ -143,37 +147,38 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 2.3 Установить зависимости
+### 2.3 Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**requirements.txt содержит:**
-- Django==4.2.25
-- djangorestframework==3.15.2
-- djangorestframework-simplejwt==5.4.0
-- psycopg2-binary==2.9.10
-- django-cors-headers==4.6.0
-- argon2-cffi==23.1.0
-- python-dotenv==1.0.1
+**requirements.txt contains:**
 
-### 2.4 Создать базу данных PostgreSQL
+* Django==4.2.25
+* djangorestframework==3.15.2
+* djangorestframework-simplejwt==5.4.0
+* psycopg2-binary==2.9.10
+* django-cors-headers==4.6.0
+* argon2-cffi==23.1.0
+* python-dotenv==1.0.1
+
+### 2.4 Create the PostgreSQL database
 
 ```bash
-# Войти в PostgreSQL
+# Log in to PostgreSQL
 psql -U postgres
 
-# В psql консоли выполнить:
+# Run in the psql console:
 CREATE DATABASE sdudorm_db;
 CREATE USER postgres1 WITH PASSWORD 'your_password';
 GRANT ALL PRIVILEGES ON DATABASE sdudorm_db TO postgres1;
 \q
 ```
 
-### 2.5 Создать .env файл
+### 2.5 Create the .env file
 
-Создайте файл `.env` в корневой папке `sdudorm-backend/`:
+Create a `.env` file in the root folder `sdudorm-backend/`:
 
 ```env
 DB_NAME=sdudorm_db
@@ -186,259 +191,277 @@ DEBUG=True
 CORS_ALLOWED_ORIGINS=http://localhost:5173
 ```
 
-### 2.6 Применить миграции и загрузить тестовые данные
+### 2.6 Apply migrations and load test data
 
-Это команда создает таблицы в базе данных (миграции) и заполняет их тестовыми данными.
+This command creates tables in the database (migrations) and fills them with test data.
 
 ```bash
 python manage.py update_db
 ```
-Эта команда автоматически:
-Применит все необходимые миграции (makemigrations и migrate).
-Загрузит все данные из файла seed_data.sql.
-Выведет в консоль информацию для проверки.
 
+This command automatically:
 
-Тестовые данные включают:
-- **20 студентов** с разными школами и личными emails
-- **1 координатор** (Status: "Coordinator of B block", Degree: "M2", Room: "B418")
-- **University emails**: все @stu.sdu.edu.kz (используются для логина)
-- **Personal emails**: @gmail.com, @mail.ru, @inbox.ru (отображаются в профиле)
-- **Пароль**: `password123` (для всех)
-- **30 комнат** (15 в блоке A для мужчин, 18 в блоке B для женщин)
-- **12 активных заселений**
-- **8 объяснительных записок**
+* Applies all required migrations (`makemigrations` and `migrate`)
+* Loads all data from the `seed_data.sql` file
+* Prints verification information to the console
 
-**Тестовые аккаунты:**
-- Студент: `nurzhan.aitanov@stu.sdu.edu.kz` / `password123`
-- Координатор: `coordinator@sdu.edu.kz` / `password123`
+Test data includes:
 
-### 2.8 Запустить Django сервер
+* **20 students** from different schools with personal emails
+* **1 coordinator** (Status: "Coordinator of B block", Degree: "M2", Room: "B418")
+* **University emails**: all `@stu.sdu.edu.kz` (used for login)
+* **Personal emails**: `@gmail.com`, `@mail.ru`, `@inbox.ru` (shown in the profile)
+* **Password**: `password123` (for all users)
+* **30 rooms** (15 in block A for men, 18 in block B for women)
+* **12 active room assignments**
+* **8 explanation notes**
+
+**Test accounts:**
+
+* Student: `nurzhan.aitanov@stu.sdu.edu.kz` / `password123`
+* Coordinator: `coordinator@sdu.edu.kz` / `password123`
+
+### 2.8 Run the Django server
 
 ```bash
 python manage.py runserver 8000
 ```
 
-✅ **Backend запущен:** http://localhost:8000
+✅ **Backend is running at:** [http://localhost:8000](http://localhost:8000)
 
 ---
 
-## ⚛️ Шаг 3: Настройка Frontend (React)
+## ⚛️ Step 3: Frontend Setup (React)
 
-### 3.1 Открыть новый терминал
+### 3.1 Open a new terminal
 
-Оставьте backend сервер работать в первом терминале.
+Keep the backend server running in the first terminal.
 
-### 3.2 Перейти в папку frontend
+### 3.2 Go to the frontend folder
 
 ```bash
 cd sdudorm-frontend
 ```
 
-### 3.3 Установить зависимости
+### 3.3 Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3.4 Запустить React сервер
+### 3.4 Run the React server
 
 ```bash
 npm run dev
 ```
 
-✅ **Frontend запущен:** http://localhost:5173
+✅ **Frontend is running at:** [http://localhost:5173](http://localhost:5173)
 
 ---
 
-## 🎉 Шаг 4: Открыть приложение
+## 🎉 Step 4: Open the Application
 
-Откройте браузер и перейдите по адресу:
+Open your browser and go to:
 
-```
+```text
 http://localhost:5173
 ```
 
-### Тестовые аккаунты для входа:
+### Test accounts for login
 
-**Студент:**
-- Email: `nurzhan.aitanov@stu.sdu.edu.kz`
-- Пароль: `password123`
+**Student:**
 
-**Координатор:**
-- Email: `coordinator@sdu.edu.kz`
-- Пароль: `password123`
+* Email: `nurzhan.aitanov@stu.sdu.edu.kz`
+* Password: `password123`
 
----
+**Coordinator:**
 
-## 🗄️ База данных (4 таблицы)
-
-### 1. `auth_user` — Django пользователи
-- Используется только для JWT аутентификации
-- Создается автоматически при логине
-- Связь: `User.username == Student.email`
-
-### 2. `students` — Студенты и координаторы
-- **student_id** (PK) — например, "22B030001"
-- **fullname** — полное имя
-- **email** — основной email (university_email)
-- **university_email** — университетский email (@stu.sdu.edu.kz) - **используется для логина**
-- **personal_email** — личный email (@gmail.com и т.д.) - отображается, но не для логина
-- **school** — название школы (например "№35 zhalpy mektep", "NIS Almaty")
-- **password_hash** — хеш пароля (Argon2)
-- **birthdate, specialty, course** — данные студента
-- **gender** — male / female
-- **access** — student / coordinator
-- **violation_count** — количество нарушений
-- **Личные данные:** iin, iban, doc_type, doc_number, doc_issue_date, local_address
-- **Coordinator поля:** status, degree, special_room
-
-### 3. `explanations` — Объяснительные записки
-- **id** (PK)
-- **student_id** (FK) → students
-- **explanation_text** — текст объяснительной
-- **status** — pending / approved / rejected
-- **created_at** — дата подачи
-- **reviewed_at** — дата проверки
-
-**Правило:** только 1 pending объяснительная на студента
-
-### 4. `rooms` — Комнаты общежития
-- **room_number** (PK) — например, "A301"
-- **block** — A / B
-- **floor** — этаж
-- **max_capacity** — вместимость (обычно 4)
-- **gender** — male / female
-- **status** — active / maintenance
-
-**Блок A** = мужчины, **Блок B** = женщины
-
-### 5. `room_assignments` — Заселение студентов
-- **id** (PK)
-- **student_id** (FK) → students
-- **room_number** (FK) → rooms
-- **assigned_at** — дата заселения
-
-**Правило:** 1 студент = 1 комната одновременно
+* Email: `coordinator@sdu.edu.kz`
+* Password: `password123`
 
 ---
 
-## 🌐 API Endpoints (16 штук)
+## 🗄️ Database (4 tables)
 
-### Авторизация
-```
-POST   /api/auth/login/         # Вход (email + password)
-POST   /api/auth/logout/        # Выход
+### 1. `auth_user` — Django users
+
+* Used only for JWT authentication
+* Created automatically during login
+* Relation: `User.username == Student.email`
+
+### 2. `students` — Students and coordinators
+
+* **student_id** (PK) — for example, `"22B030001"`
+* **fullname** — full name
+* **email** — primary email (`university_email`)
+* **university_email** — university email (`@stu.sdu.edu.kz`) — **used for login**
+* **personal_email** — personal email (`@gmail.com`, etc.) — displayed in the profile, but not used for login
+* **school** — school name (for example `"№35 zhalpy mektep"`, `"NIS Almaty"`)
+* **password_hash** — password hash (Argon2)
+* **birthdate, specialty, course** — student data
+* **gender** — male / female
+* **access** — student / coordinator
+* **violation_count** — number of violations
+* **Personal data:** iin, iban, doc_type, doc_number, doc_issue_date, local_address
+* **Coordinator fields:** status, degree, special_room
+
+### 3. `explanations` — Explanation notes
+
+* **id** (PK)
+* **student_id** (FK) → students
+* **explanation_text** — explanation note text
+* **status** — pending / approved / rejected
+* **created_at** — submission date
+* **reviewed_at** — review date
+
+**Rule:** only 1 pending explanation per student
+
+### 4. `rooms` — Dorm rooms
+
+* **room_number** (PK) — for example, `"A301"`
+* **block** — A / B
+* **floor** — floor number
+* **max_capacity** — capacity (usually 4)
+* **gender** — male / female
+* **status** — active / maintenance
+
+**Block A** = men, **Block B** = women
+
+### 5. `room_assignments` — Student room assignments
+
+* **id** (PK)
+* **student_id** (FK) → students
+* **room_number** (FK) → rooms
+* **assigned_at** — assignment date
+
+**Rule:** 1 student = 1 room at a time
+
+---
+
+## 🌐 API Endpoints (16 total)
+
+### Authentication
+
+```text
+POST   /api/auth/login/         # Login (email + password)
+POST   /api/auth/logout/        # Logout
 ```
 
-### Профиль
-```
-GET    /api/profile/            # Получить профиль
-PUT    /api/profile/            # Обновить данные
-POST   /api/profile/change-password/   # Сменить пароль
+### Profile
+
+```text
+GET    /api/profile/                    # Get profile
+PUT    /api/profile/                    # Update data
+POST   /api/profile/change-password/    # Change password
 ```
 
-### Объяснительные (студенты)
-```
-GET    /api/explanations/my/    # Мои объяснительные
-POST   /api/explanations/       # Подать объяснительную
+### Explanations (students)
+
+```text
+GET    /api/explanations/my/    # My explanations
+POST   /api/explanations/       # Submit an explanation
 ```
 
-### Объяснительные (координаторы)
-```
-GET    /api/explanations/pending/      # Ожидающие проверки
-GET    /api/explanations/reviewed/     # Проверенные
-PATCH  /api/explanations/:id/approve/  # Одобрить (+1 нарушение)
-PATCH  /api/explanations/:id/reject/   # Отклонить
+### Explanations (coordinators)
+
+```text
+GET    /api/explanations/pending/      # Waiting for review
+GET    /api/explanations/reviewed/     # Reviewed
+PATCH  /api/explanations/:id/approve/  # Approve (+1 violation)
+PATCH  /api/explanations/:id/reject/   # Reject
 ```
 
-### Комнаты
-```
-GET    /api/rooms/?block=A                    # Список комнат по блоку
-GET    /api/rooms/:room_number/residents/     # Кто живет в комнате
-POST   /api/room-assignments/                 # Заселить студента
-DELETE /api/room-assignments/                 # Выселить студента
-GET    /api/students/unassigned/?gender=male  # Студенты без комнаты
+### Rooms
+
+```text
+GET    /api/rooms/?block=A                    # List rooms by block
+GET    /api/rooms/:room_number/residents/     # Who lives in the room
+POST   /api/room-assignments/                 # Assign a student to a room
+DELETE /api/room-assignments/                 # Remove a student from a room
+GET    /api/students/unassigned/?gender=male  # Students without a room
 ```
 
-### Отчеты
-```
-POST   /api/reports/violations/export/   # Скачать CSV отчет
+### Reports
+
+```text
+POST   /api/reports/violations/export/   # Download CSV report
 ```
 
 ---
 
-## ✨ Основные функции
+## ✨ Main Features
 
-### Для студентов:
-1. **Вход в систему** → JWT аутентификация
-2. **Главная страница** → Информация о профиле, комнате, нарушениях
-3. **Мой профиль** → Редактирование личных данных (IIN, IBAN, документы)
-4. **Новости** → Просмотр новостей общежития
-5. **Онлайн-сервисы** → Подача объяснительных записок
-6. **Экспорт отчетов** → CSV файл с нарушениями по блокам и датам
-7. **Отслеживание комнат** → Просмотр занятости комнат
-8. **Настройки** → Смена пароля, выбор языка
+### For students:
 
-### Для координаторов:
-1. **Проверка объяснительных** → Одобрение/отклонение (с увеличением счетчика нарушений)
-2. **Управление комнатами** → Заселение/выселение студентов
-3. **Фильтрация по полу** → Блок A (мужчины), Блок B (женщины)
-4. **Мониторинг** → Просмотр занятости комнат в реальном времени
+1. **System login** → JWT authentication
+2. **Home page** → profile, room, and violation information
+3. **My profile** → edit personal data (IIN, IBAN, documents)
+4. **News** → view dormitory news
+5. **Online services** → submit explanation notes
+6. **Report export** → CSV file with violations by blocks and dates
+7. **Room tracking** → view room occupancy
+8. **Settings** → change password, choose language
 
----
+### For coordinators:
 
-## 🔐 Безопасность
-
-- **Argon2** — современное хеширование паролей (первый приоритет)
-- **JWT токены** — Access (1 час) + Refresh (7 дней)
-- **CORS защита** — только `localhost:5173` разрешен
-- **Permission checks** — проверка прав доступа на каждый endpoint
-- **Django ORM** — защита от SQL-инъекций
-- **Auto-logout** — автоматический выход при истечении токена
-- **Environment variables** — секретные данные в `.env`
+1. **Review explanation notes** → approve/reject (with violation counter increase)
+2. **Room management** → assign/remove students
+3. **Gender filtering** → Block A (men), Block B (women)
+4. **Monitoring** → view live room occupancy
 
 ---
 
-## 🛠️ Команды для разработки
+## 🔐 Security
+
+* **Argon2** — modern password hashing (top priority)
+* **JWT tokens** — Access (1 hour) + Refresh (7 days)
+* **CORS protection** — only `localhost:5173` is allowed
+* **Permission checks** — access rights are checked for every endpoint
+* **Django ORM** — protection against SQL injection
+* **Auto-logout** — automatic logout when the token expires
+* **Environment variables** — secret data stored in `.env`
+
+---
+
+## 🛠️ Development Commands
 
 ### Backend (Django)
+
 ```bash
-# Запуск сервера
+# Run the server
 python manage.py runserver 8000
 
-# Создание миграций
+# Create migrations
 python manage.py makemigrations
 
-# Применение миграций
+# Apply migrations
 python manage.py migrate
 
-# Создание суперпользователя
+# Create superuser
 python manage.py createsuperuser
 
-# Запуск shell
+# Run shell
 python manage.py shell
 ```
 
 ### Frontend (React)
+
 ```bash
-# Запуск dev сервера
+# Run dev server
 npm run dev
 
-# Сборка для продакшена
+# Build for production
 npm run build
 
-# Предпросмотр сборки
+# Preview build
 npm run preview
 
-# Проверка типов TypeScript
+# TypeScript type check
 npm run type-check
 
-# Форматирование кода
+# Format code
 npm run format
 ```
 
 ---
 
-## 📚 Дополнительная документация
-- **sdudorm-backend/BACKEND_DOCUMENTATION.md** — подробная документация backend
