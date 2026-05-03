@@ -1,4 +1,3 @@
-
 """
 Django settings for sdudorm_backend project.
 """
@@ -158,7 +157,13 @@ SIMPLE_JWT = {
 }
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:5173').split(',')
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "https://sdu-dorm.vercel.app",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://sdu-dorm.vercel.app",
+]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     'accept',
