@@ -1,6 +1,6 @@
 /**
  * Real Django Backend API Client
- * Base URL: //sdu-dorm.onrender.com/api/
+ * Base URL://sdu-dorm.onrender.com/api/
  */
 
 import { storage } from '../utils/storage';
